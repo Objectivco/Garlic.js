@@ -130,8 +130,8 @@
     , persist: function () {
 
       // some binded events are redundant (change & paste for example), persist only once by field val
-      if ( this.val === this.getVal() ) {
-        return;
+      if ( ! this.$element.is('input[type=radio], input[type=checkbox]') && ( this.val === this.getVal() ) ) {
+          return;
       }
 
       this.val = this.getVal();
